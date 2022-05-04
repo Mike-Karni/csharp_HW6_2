@@ -39,10 +39,13 @@ while (changeCurrency != "евро" && changeCurrency != "доллар" && chang
 if (wantToChange == "евро" && changeCurrency == "доллар")
 {
     Console.WriteLine("Какое количество евро вы хотите обменять на доллары? ");
-    double countchangeEvro = Convert.ToDouble(Console.ReadLine());   
+    double countchangeEvro = Convert.ToDouble(Console.ReadLine());
+    while(countchangeEvro<=balanceEvro)
+    {    
     balanceUsd = balanceUsd + countchangeEvro * 1.05;
     balanceEvro = balanceEvro - countchangeEvro;
-    Console.WriteLine($"Ваш баланс портфеля после обмена  {wantToChange} на {changeCurrency} равен \n{balanceUsd} долларов, \n{balanceEvro}, \n{balanceBelRub}");    
+    Console.WriteLine($"Ваш баланс портфеля после обмена  {wantToChange} на {changeCurrency} равен \n{balanceUsd} долларов \n{balanceEvro} евро \n{balanceBelRub} белорусских рублей");    
+    }
 }
 /*  else if (wantToChange == "евро")
   {
