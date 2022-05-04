@@ -14,104 +14,90 @@ Console.Write("белорусский рубль ");
 double balanceBelRub = Convert.ToDouble(Console.ReadLine());
 
 //Вывод баланс
-Console.WriteLine($"Ваш баланс валют : \n{balanceEvro} евро. \n{balanceUsd} USD. \n{balanceBelRub} руб");
-Console.WriteLine("Какую валюту из вашего баланса вы хотите поменять?");
-string wantToChange = Console.ReadLine();
+Console.WriteLine($"Ваш баланс валют : \n{balanceEvro} евро. \n{balanceUsd} USD. \n{balanceBelRub} белорусский  рубль ");
 
-while (wantToChange != "евро" && wantToChange != "доллар" && wantToChange != "белорусский рубль")
+
+while (true)
 {
-    Console.WriteLine("Введите правильное название валюты:евро / доллар / белорусский рубль");
-    wantToChange = Console.ReadLine();
-}
-
-Console.WriteLine($"На какую валюту  вы хотите поменять {wantToChange} ?");
-string changeCurrency = Console.ReadLine();
-
-while (changeCurrency != "евро" && changeCurrency != "доллар" && changeCurrency != "белорусский рубль")
-{
-    Console.WriteLine("Введите правильное название валюты:евро / доллар / белорусский рубль");
-    changeCurrency = Console.ReadLine();
-}
-
-//ЦИКЛИМ ОБМЕННУЮ КАНИТЕЛЬ евро/бакс
-Console.WriteLine("Вы хотите продожить обмен? Введите  да или нет");
-string answer = Console.ReadLine();
-while (answer == "да")
-{
-    Console.WriteLine("Какую валюту из вашего баланса вы хотите поменять?");
-    wantToChange = Console.ReadLine();
-     Console.WriteLine("Какое количество евро вы хотите обменять?");
-    double countchangeEvro = Convert.ToDouble(Console.ReadLine());
-    if (wantToChange == "евро" &&  countchangeEvro <= balanceEvro && answer == "да" && changeCurrency == "доллар")
-    {
-        Console.WriteLine("Какое количество евро вы хотите обменять?");
-        double countchangeEvro = Convert.ToDouble(Console.ReadLine());
-        
-        if (countchangeEvro <= balanceEvro && answer == "да" && changeCurrency == "доллар")
-        {
-            balanceUsd = balanceUsd + countchangeEvro * 1.05;
-            balanceEvro = balanceEvro - countchangeEvro;
-            Console.WriteLine($"Ваш баланс портфеля после обмена  {wantToChange} на {changeCurrency} равен \n{balanceUsd} долларов \n{balanceEvro} евро \n{balanceBelRub} белорусских рублей");
-            Console.WriteLine("Вы хотите продожить обмен? Введите  да или нет");
-            answer = Console.ReadLine();
-        }
-       
-      
-        {
-            Console.WriteLine("Недостаточно евро на балансе!!!");
-        }
-    }
-   
-}
-
-
-
-
-
-
-
-/*while (true)
-{
-    Console.WriteLine("Вы хотите продолжить обмен валют?");
+    Console.WriteLine("Желаете продолжить обмен?");
     string answer = Console.ReadLine();
-    if (answer == "да")
-    {
-
-    }
-    else
+    if (answer == "нет")
     {
         break;
-    }*/
+    }
+    else if (answer == "да")
+    {
+        Console.WriteLine("Какую валюту из вашего баланса вы хотите поменять?");
+        string wantToChange = Console.ReadLine();
+
+        while (wantToChange != "евро" && wantToChange != "доллар" && wantToChange != "белорусский рубль")
+        {
+            Console.WriteLine("Введите правильное название валюты:евро / доллар / белорусский рубль");
+            wantToChange = Console.ReadLine();
+        }
+
+        Console.WriteLine($"На какую валюту  вы хотите поменять {wantToChange} ?");
+        string changeCurrency = Console.ReadLine();
+
+        while (changeCurrency != "евро" && changeCurrency != "доллар" && changeCurrency != "белорусский рубль")
+        {
+            Console.WriteLine("Введите правильное название валюты:евро / доллар / белорусский рубль");
+            changeCurrency = Console.ReadLine();
+        }
+        Console.WriteLine($"Какую сумму {wantToChange} вы хотите обменять на {changeCurrency} ?");
+        double countchange = Convert.ToDouble(Console.ReadLine());
+
+        if (wantToChange == "евро" && countchange <= balanceEvro && changeCurrency == "доллар")
+        {
 
 
+            balanceUsd = balanceUsd + countchange * 1.05;
+            balanceEvro = balanceEvro - countchange;
+            Console.WriteLine($"Ваш баланс портфеля после обмена  {wantToChange} на {changeCurrency} равен \n{balanceUsd} долларов \n{balanceEvro} евро \n{balanceBelRub} белорусских рублей");
+        }
 
 
+        else if (wantToChange == "евро" && countchange <= balanceEvro && changeCurrency == "белорусский рубль")
+        {
 
 
-//Console.WriteLine($"На какую валюту вы хотите поменять {currency}");
-/*
-if (currency == "евро")
-{
-    Console.WriteLine("Введите ваш баланс в евро");
-    double balanceEvro = Convert.ToDouble(Console.ReadLine());
-    double Rurbalance = balanceEvro * 74.56;
-    Console.WriteLine($"Ваш баланс после обмена {Rurbalance} российских рублей");
+            balanceBelRub = balanceBelRub + countchange * 2.78;
+            balanceEvro = balanceEvro - countchange;
+            Console.WriteLine($"Ваш баланс портфеля после обмена  {wantToChange} на {changeCurrency} равен \n{balanceUsd} долларов \n{balanceEvro} евро \n{balanceBelRub} белорусских рублей");
+        }
+        else if (wantToChange == "доллар" && countchange <= balanceEvro && changeCurrency == "евро")
+        {
+
+
+            balanceEvro = balanceEvro + countchange * 0.95;
+            balanceUsd = balanceUsd - countchange;
+            Console.WriteLine($"Ваш баланс портфеля после обмена  {wantToChange} на {changeCurrency} равен \n{balanceUsd} долларов \n{balanceEvro} евро \n{balanceBelRub} белорусских рублей");
+        }
+        else if (wantToChange == "доллар" && countchange <= balanceEvro && changeCurrency == "белорусский рубль")
+        {
+
+
+            balanceBelRub = balanceBelRub + countchange * 2.65;
+            balanceUsd = balanceUsd - countchange;
+            Console.WriteLine($"Ваш баланс портфеля после обмена  {wantToChange} на {changeCurrency} равен \n{balanceUsd} долларов \n{balanceEvro} евро \n{balanceBelRub} белорусских рублей");
+        }
+        else if (wantToChange == "белорусский рубль" && countchange <= balanceEvro && changeCurrency == "евро")
+        {
+
+
+            balanceEvro = balanceEvro + countchange * 0.36;
+            balanceBelRub = balanceBelRub - countchange;
+            Console.WriteLine($"Ваш баланс портфеля после обмена  {wantToChange} на {changeCurrency} равен \n{balanceUsd} долларов \n{balanceEvro} евро \n{balanceBelRub} белорусских рублей");
+        }
+        else if (wantToChange == "белорусский рубль" && countchange <= balanceEvro && changeCurrency == "доллар")
+        {
+
+
+            balanceUsd = balanceUsd + countchange * 0.38;
+            balanceBelRub = balanceBelRub - countchange;
+            Console.WriteLine($"Ваш баланс портфеля после обмена  {wantToChange} на {changeCurrency} равен \n{balanceUsd} долларов \n{balanceEvro} евро \n{balanceBelRub} белорусских рублей");
+        }
+    }
+
 
 }
-else if (currency == "доллар")
-{
-    Console.WriteLine("Введите ваш баланс в долларах");
-    double balanceUsd = Convert.ToDouble(Console.ReadLine());
-    double Rurbalance = balanceUsd * 71.02;
-    Console.WriteLine($"Ваш баланс после обмена {Rurbalance} российских рублей");
-
-}
-else if (currency == "белорусский рубль")
-{
-    Console.WriteLine("Введите ваш баланс в белорусских рублях");
-    double balanceBelRub = Convert.ToDouble(Console.ReadLine());
-    double Rurbalance = balanceBelRub * 26.77;
-    Console.WriteLine($"Ваш баланс после обмена {Rurbalance} российских рублей");
-
-}*/
-
