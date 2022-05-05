@@ -17,19 +17,20 @@
 // -    Console.WriteLine("Желаете продолжить обмен?");
 // -    string answer = Console.ReadLine();
 // 1     функиция :string answer = DoYouWantContinue("да");
-//     if (answer == "нет")
-//     {
-//         break;
-//     }
-//     else if (answer == "да")
-//     {
+// 1    if (answer == "нет")
+// 1    {
+// 1        break;
+// 1    }
+// 1    else if (answer == "да")
+// 1    {
 //-         Console.WriteLine("Какую валюту из вашего баланса вы хотите поменять?");
 //-         string wantToChange = Console.ReadLine();
 //1         string wantToChange = ChoiseChange("");
-//         while (wantToChange != "евро" && wantToChange != "доллар" && wantToChange != "белорусский рубль")
-//         {
-//             Console.WriteLine("Введите правильное название валюты:евро / доллар / белорусский рубль");
-//             wantToChange = Console.ReadLine();        
+//1         while (wantToChange != "евро" && wantToChange != "доллар" && wantToChange != "белорусский рубль")
+//1         {
+//-             Console.WriteLine("Введите правильное название валюты:евро / доллар / белорусский рубль");
+//-             wantToChange = Console.ReadLine();
+//1             string wantToChange = CorrectNameInput("");
 //         }
 //         Console.WriteLine($"На какую валюту  вы хотите поменять {wantToChange} ?");
 //         string changeCurrency = Console.ReadLine();
@@ -96,10 +97,15 @@
 // }
 
                                 // string function for currency choise
-string ChoiseChange(string currency)
-{
-    Console.WriteLine("Какую валюту из вашего баланса вы хотите поменять?");
-    return Console.ReadLine();
+// string ChoiseChange(string currency)
+// {
+//     Console.WriteLine("Какую валюту из вашего баланса вы хотите поменять?");
+//     return Console.ReadLine();
 
+// }
+                                //string method for correct name currency  input
+// string CorrectNameInput( string name)
+// {
+//     Console.WriteLine("Введите правильное название валюты:евро / доллар / белорусский рубль");
+//     return Console.ReadLine(); 
 }
-string wantToChange = ChoiseChange("");
