@@ -5,31 +5,31 @@
 /*1. запросить введите валюту*/
 
 // // Портфель
+//1 Console.WriteLine("Введите  ваш баланс валют");
+//1 decimal balanceEvro = InputBalance("евро");
+//1 decimal balanceUsd = InputBalance("доллар");
+//1 decimal balanceBelRub = InputBalance("белорусский рубль");
+// // Вывод баланс
+//1  Console.WriteLine($"Ваш баланс валют : \n{balanceEvro} евро. \n{balanceUsd} USD. \n{balanceBelRub} белорусский  рубль ");
 
-// Console.WriteLine("Введите  ваш баланс валют");
- double balanceEvro = Convert.ToDouble(InputBalance("евро"));
- double balanceUsd = Convert.ToDouble(InputBalance("доллар"));
- double balanceBelRub = Convert.ToDouble(InputBalance("белорусский рубль"));
-
-
-// Вывод баланс
-//  Console.WriteLine($"Ваш баланс валют : \n{balanceEvro} евро. \n{balanceUsd} USD. \n{balanceBelRub} белорусский  рубль ");
 // while (true)
 // {
-//     Console.WriteLine("Желаете продолжить обмен?");
-//     string answer = Console.ReadLine();
+// -    Console.WriteLine("Желаете продолжить обмен?");
+// -    string answer = Console.ReadLine();
+// 1     функиция :string answer = DoYouWantContinue("да");
 //     if (answer == "нет")
 //     {
 //         break;
 //     }
 //     else if (answer == "да")
 //     {
-//         Console.WriteLine("Какую валюту из вашего баланса вы хотите поменять?");
-//         string wantToChange = Console.ReadLine();
+//-         Console.WriteLine("Какую валюту из вашего баланса вы хотите поменять?");
+//-         string wantToChange = Console.ReadLine();
+//1         string wantToChange = ChoiseChange("");
 //         while (wantToChange != "евро" && wantToChange != "доллар" && wantToChange != "белорусский рубль")
 //         {
 //             Console.WriteLine("Введите правильное название валюты:евро / доллар / белорусский рубль");
-//             wantToChange = Console.ReadLine();
+//             wantToChange = Console.ReadLine();        
 //         }
 //         Console.WriteLine($"На какую валюту  вы хотите поменять {wantToChange} ?");
 //         string changeCurrency = Console.ReadLine();
@@ -81,16 +81,25 @@
 // Console.WriteLine("Введите  ваш баланс валют");
 // Console.Write("Баланс евро ");
 
-// Void function for currency balance input
-string InputBalance(string balance)
-{
-    Console.Write($"Баланс {balance} ");
-    Console.ReadLine();
-    return balance;
-}
-
-
-// void YourBalance(string balanceEvro, string balanceUsd, string balanceBelRub)
+//                              decimal function for currency balance input
+// decimal InputBalance(string balance)
 // {
-//     Console.WriteLine($"Ваш баланс валют : \n{balanceEvro} евро. \n{balanceUsd} USD. \n{balanceBelRub} белорусский  рубль ");
+//     Console.Write($"Баланс {balance} ");
+//     return Convert.ToDecimal(Console.ReadLine());
+
 // }
+//                              string fuction for answer
+// string DoYouWantContinue(string answer)
+// {
+//     Console.WriteLine("Желаете продолжить обмен?");
+//     return Console.ReadLine();
+// }
+
+                                // string function for currency choise
+string ChoiseChange(string currency)
+{
+    Console.WriteLine("Какую валюту из вашего баланса вы хотите поменять?");
+    return Console.ReadLine();
+
+}
+string wantToChange = ChoiseChange("");
