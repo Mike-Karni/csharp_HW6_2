@@ -52,48 +52,48 @@ while (true)
         {
             //- balanceUsd = balanceUsd + countchange * 1.05;
             //- balanceEvro = balanceEvro - countchange;
-            CalculateBalance1(balanceUsd, countchange, EurUsd);
-            CalculateBalance2(balanceEvro, countchange);
+            balanceUsd = CalculateBalance1(balanceUsd, countchange, EurUsd);
+            balanceEvro = CalculateBalance2(balanceEvro, countchange);
             Console.WriteLine($"Ваш баланс портфеля после обмена  {wantToChange} на {changeCurrency} равен \n{balanceUsd} долларов \n{balanceEvro} евро \n{balanceBelRub} белорусских рублей");
         }
         else if (wantToChange == "евро" && countchange <= balanceEvro && changeCurrency == "белорусский рубль")
         {
             //             balanceBelRub = balanceBelRub + countchange * 2.78;
             //             balanceEvro = balanceEvro - countchange;
-            CalculateBalance1(balanceBelRub, countchange, EurBelRub);
-            CalculateBalance2(balanceEvro, countchange);
+            balanceBelRub = CalculateBalance1(balanceBelRub, countchange, EurBelRub);
+            balanceEvro = CalculateBalance2(balanceEvro, countchange);
             Console.WriteLine($"Ваш баланс портфеля после обмена  {wantToChange} на {changeCurrency} равен \n{balanceUsd} долларов \n{balanceEvro} евро \n{balanceBelRub} белорусских рублей");
         }
         else if (wantToChange == "доллар" && countchange <= balanceEvro && changeCurrency == "евро")
         {
             //             balanceEvro = balanceEvro + countchange * 0.95;
             //             balanceUsd = balanceUsd - countchange;
-            CalculateBalance1(balanceEvro, countchange, UsdEur);
-            CalculateBalance2(balanceUsd, countchange);
+            balanceEvro = CalculateBalance1(balanceEvro, countchange, UsdEur);
+            balanceUsd = CalculateBalance2(balanceUsd, countchange);
             Console.WriteLine($"Ваш баланс портфеля после обмена  {wantToChange} на {changeCurrency} равен \n{balanceUsd} долларов \n{balanceEvro} евро \n{balanceBelRub} белорусских рублей");
         }
         else if (wantToChange == "доллар" && countchange <= balanceEvro && changeCurrency == "белорусский рубль")
         {
             //             balanceBelRub = balanceBelRub + countchange * 2.65;
             //             balanceUsd = balanceUsd - countchange;
-            CalculateBalance1(balanceBelRub, countchange, UsdBelRub);
-            CalculateBalance2(balanceUsd, countchange);
+            balanceBelRub = CalculateBalance1(balanceBelRub, countchange, UsdBelRub);
+            balanceUsd = CalculateBalance2(balanceUsd, countchange);
             Console.WriteLine($"Ваш баланс портфеля после обмена  {wantToChange} на {changeCurrency} равен \n{balanceUsd} долларов \n{balanceEvro} евро \n{balanceBelRub} белорусских рублей");
         }
         else if (wantToChange == "белорусский рубль" && countchange <= balanceEvro && changeCurrency == "евро")
         {
             //             balanceEvro = balanceEvro + countchange * 0.36;
             //             balanceBelRub = balanceBelRub - countchange;
-            CalculateBalance1(balanceEvro, countchange, BelRubEur);
-            CalculateBalance2(balanceBelRub, countchange);
+            balanceEvro = CalculateBalance1(balanceEvro, countchange, BelRubEur);
+            balanceBelRub = CalculateBalance2(balanceBelRub, countchange);
             Console.WriteLine($"Ваш баланс портфеля после обмена  {wantToChange} на {changeCurrency} равен \n{balanceUsd} долларов \n{balanceEvro} евро \n{balanceBelRub} белорусских рублей");
         }
         else if (wantToChange == "белорусский рубль" && countchange <= balanceEvro && changeCurrency == "доллар")
         {
             //             balanceUsd = balanceUsd + countchange * 0.38;
             //             balanceBelRub = balanceBelRub - countchange;
-            CalculateBalance1(balanceUsd, countchange, BelRubUsd);
-            CalculateBalance2(balanceBelRub, countchange);
+            balanceUsd = CalculateBalance1(balanceUsd, countchange, BelRubUsd);
+            balanceBelRub = CalculateBalance2(balanceBelRub, countchange);
             Console.WriteLine($"Ваш баланс портфеля после обмена  {wantToChange} на {changeCurrency} равен \n{balanceUsd} долларов \n{balanceEvro} евро \n{balanceBelRub} белорусских рублей");
         }
     }
