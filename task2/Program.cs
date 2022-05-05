@@ -96,16 +96,32 @@
 //     return Console.ReadLine();
 // }
 
-                                // string function for currency choise
+// string function for currency choise
 // string ChoiseChange(string currency)
 // {
 //     Console.WriteLine("Какую валюту из вашего баланса вы хотите поменять?");
 //     return Console.ReadLine();
 
 // }
-                                //string method for correct name currency  input
+//string method for correct name currency  input
 // string CorrectNameInput( string name)
 // {
 //     Console.WriteLine("Введите правильное название валюты:евро / доллар / белорусский рубль");
 //     return Console.ReadLine(); 
+//}
+
+string ChoiseChange(string currency)
+{
+    Console.WriteLine("Какую валюту из вашего баланса вы хотите поменять?");
+    return Console.ReadLine();
 }
+
+string wantToChange = ChoiseChange("");
+Console.WriteLine(wantToChange);
+string onWhatRoChange(string name)
+{
+    Console.WriteLine($"На какую валюту  вы хотите поменять {wantToChange} ?");
+    return Console.ReadLine();
+}
+string changeCurrency = onWhatRoChange("");
+Console.WriteLine(changeCurrency);
