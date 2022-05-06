@@ -113,11 +113,9 @@ string onWhatRoChange(string name)
 decimal CalculateBalance1(decimal firstCurrency, decimal countchange, decimal CurrencyRatio)
 {
     return firstCurrency = firstCurrency + countchange * CurrencyRatio;
-
 }
 //вычисления функция   
 decimal CalculateBalance2(decimal SecondCurrency, decimal countchange)
 {
     return SecondCurrency = SecondCurrency - countchange;
-
 }
