@@ -27,6 +27,7 @@
  int[] numbers = new int[Length];
  FillArray(numbers);
  PrintArray(numbers);
+ Console.WriteLine("Введите число , которое хотите добавить в массив");
  string newNumber = Console.ReadLine();
  int addedNumber = Convert.ToInt32(newNumber);
 //  PrintNewArray(numbers,newNumber);
